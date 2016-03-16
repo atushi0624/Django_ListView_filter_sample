@@ -1,0 +1,96 @@
+[
+    {
+        "model": "myapp.Kind",
+        "pk": 1,
+        "fields": {
+            "name": "りんご"
+        }
+    },
+    {
+        "model": "myapp.Kind",
+        "pk": 2,
+        "fields": {
+            "name": "さつまいも"
+        }
+    },
+    {
+        "model": "myapp.Food",
+        "pk": 1,
+        "fields": {
+            "kind": 1,
+            "name": "ふじ"
+        }
+    },
+    {
+        "model": "myapp.Food",
+        "pk": 2,
+        "fields": {
+            "kind": 1,
+            "name": "シナノゴールド"
+        }
+    },
+    {
+        "model": "myapp.Food",
+        "pk": 3,
+        "fields": {
+            "kind": 1,
+            "name": "シナノスイート"
+        }
+    },
+    {
+        "model": "myapp.Food",
+        "pk": 4,
+        "fields": {
+            "kind": 1,
+            "name": "紅玉"
+        }
+    },
+    {
+        "model": "myapp.Food",
+        "pk": 5,
+        "fields": {
+            "kind": 1,
+            "name": "ゴールデンデリシャス"
+        }
+    },
+    {
+        "model": "myapp.Food",
+        "pk": 6,
+        "fields": {
+            "kind": 1,
+            "name": "はるか"
+        }
+    },
+    {
+        "model": "myapp.Food",
+        "pk": 7,
+        "fields": {
+            "kind": 2,
+            "name": "紅あずま"
+        }
+    },
+    {
+        "model": "myapp.Food",
+        "pk": 8,
+        "fields": {
+            "kind": 2,
+            "name": "紅はるか"
+        }
+    },
+    {
+        "model": "myapp.Food",
+        "pk": 9,
+        "fields": {
+            "kind": 2,
+            "name": "シルクスイート"
+        }
+    },
+    {
+        "model": "myapp.Food",
+        "pk": 10,
+        "fields": {
+            "kind": 2,
+            "name": "紅まさり"
+        }
+    }
+]

@@ -1,0 +1,50 @@
+{% load custom_filters %}
+
+<!DOCTYPE html>
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>My Site</title>
+</head>
+<body>
+    <form method="get" action="" name="filter_form">
+        <legend>絞り込み条件</legend>
+        <div>
+            <span>種類：</span>
+            {% for kind in kinds %}
+                <input type="checkbox" id="filter_kind_{{ kind.pk }}" 
+                    name="kind" 
+                    value="{{ kind.pk }}"
+                    {{ kind.pk|checked:request.GET }}
+                    >{{ kind.name }}
+            {% endfor %}
+        </div>
+        <div>
+            <span>品種：</span>
+            <input type="search" id="filter_name"
+                name="name" 
+                placeholder="品種名"
+                value={{ request.GET|name }}>
+            <button id="filter">絞り込み</button>
+        </div>
+    </form>
+
+    <hr style="width: 100%; color: white; height: 1px; background-color:white;" />
+
+    <div id="main">
+        <h1>結果</h1>
+        <table>
+            <tr>
+                <th>種類</th>
+                <th>品種</th>
+            </tr>
+            {% for food in object_list %}
+                <tr>
+                    <td>{{ food.kind.name }}</td>
+                    <td>{{ food.name }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

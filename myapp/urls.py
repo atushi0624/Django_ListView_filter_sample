@@ -1,5 +1,6 @@
 from django.conf.urls import url
+from .views import FoodListView
 
 urlpatterns = [
-    url(r'^$', ListView.as_view(), name='listview'),
+    url(r'^$', FoodListView.as_view(), name='list'),
 ]
