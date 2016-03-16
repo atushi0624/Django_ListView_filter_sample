@@ -1,10 +1,13 @@
 {% load custom_filters %}
+{% load custom_tags %}
 
 <!DOCTYPE html>
 <html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <title>My Site</title>
+    {% load staticfiles %}
+    <link href={% static 'myapp/css/pagination.css' %} rel='stylesheet'>
 </head>
 <body>
     <form method="get" action="" name="filter_form">
@@ -46,5 +49,24 @@
             {% endfor %}
         </table>
     </div>
+    
+    {% if is_paginated %}
+        <ul class="pagination">
+            {% if page_obj.has_previous %}
+                <li><a href="{% url 'my:list' %}?{% query_string request page_obj.previous_page_number %}">previous</a></li>
+            {% endif %}
+            {% for link_page in page_obj.paginator.page_range %}
+                {% if link_page == page_obj.number %}
+                    <li class="active">{{ link_page }}</li>
+                {% else %}
+                    <li><a href="{% url 'my:list' %}?{% query_string request link_page %}">{{ link_page }}</a></li>
+                {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+                <li><a href="{% url 'my:list' %}?{% query_string request page_obj.next_page_number %}">next</a></li>
+            {% endif %}
+        </ul>
+    {% endif %}
 </body>
 </html>

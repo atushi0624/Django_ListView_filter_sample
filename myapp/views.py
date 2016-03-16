@@ -4,6 +4,7 @@ from .models import Kind, Food
 
 class FoodListView(ListView):
     model = Food
+    paginate_by = 2
 
     def get_context_data(self, **kwargs):
         context = super(FoodListView, self).get_context_data(**kwargs)
